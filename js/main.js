@@ -10,3 +10,17 @@ loadTasksFromLocalStorage();
 
 // LOAD ALL EVENT LISTENERS
 loadEventListener();
+
+function loadEventListener() {
+    // ADD TASK EVENT
+    form.addEventListener('submit', addTask);
+
+    // DELETE TASK EVENT
+    taskList.addEventListener('click', removeTask);
+
+    // FILTER TASKS EVENT
+    filter.addEventListener('keyup', filterTasks);
+
+    // CLEAR TASKS EVENT
+    clearBtn.addEventListener('click', clearTasks);
+}
