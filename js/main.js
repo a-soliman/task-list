@@ -69,3 +69,10 @@ function createTaskElement(content) {
     taskList.appendChild(newLi);
     return;
 }
+
+// SAVE TASK TO LOCALSTORAGE
+function saveTaskToLocalStorage(content) {
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks.push(content);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
