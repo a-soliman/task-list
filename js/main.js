@@ -24,3 +24,15 @@ function loadEventListener() {
     // CLEAR TASKS EVENT
     clearBtn.addEventListener('click', clearTasks);
 }
+
+// LOAD TASK FROM LOCALSTORAGE
+function loadTasksFromLocalStorage() {
+    let tasks = JSON.parse(localStorage.getItem('tasks'));
+    if (!tasks) {
+        tasks = [];
+    }
+    tasks.forEach( ( task )=> {
+        createTaskElement(task);
+    });
+    console.log(tasks)
+}
