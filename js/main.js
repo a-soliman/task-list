@@ -76,3 +76,9 @@ function saveTaskToLocalStorage(content) {
     tasks.push(content);
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
+
+// CLEAR INPUT FILED
+function clearInputField() {
+    taskInput.value = '';
+    return;
+}
