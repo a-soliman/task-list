@@ -49,3 +49,23 @@ function addTask(e) {
     saveTaskToLocalStorage(value);
 
 }
+
+// CREATE AN ELEMENT
+function createTaskElement(content) {
+    const newLi         = document.createElement('li');
+    const textContent   = document.createTextNode(content);
+    const newLink       = document.createElement('a');
+    const newDelIcon    = document.createElement('i');
+
+    newLi.className     = 'collection-item';
+    newLink.className   = 'delete-item secondary-content';
+    newDelIcon.className= 'fa fa-remove';
+
+    newLink.setAttribute('href', '#');
+
+    newLink.appendChild(newDelIcon);
+    newLi.appendChild(textContent);
+    newLi.appendChild(newLink);
+    taskList.appendChild(newLi);
+    return;
+}
