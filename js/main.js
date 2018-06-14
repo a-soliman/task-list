@@ -104,3 +104,18 @@ function removeTaskFromLocalStorage(content) {
         localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 }
+
+// FILTER TASKS
+function filterTasks(e) {
+    const filterQuery = filter.value.toLowerCase().trim();
+    const tasks = Array.from(taskList.children);
+
+    tasks.forEach( ( task ) => {
+        if ( !task.textContent.roLowerCase().includes(filterQuery)) {
+            task.style.display = 'none';
+        }
+        else {
+            task.style.display = 'block';
+        }
+    });
+}
