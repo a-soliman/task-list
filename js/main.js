@@ -119,3 +119,12 @@ function filterTasks(e) {
         }
     });
 }
+
+// CLEAR TASKS
+function clearTasks() {
+    while (taskList.firstChild) {
+        taskList.firstChild.remove();
+    }
+    localStorage.removeItem('tasks');
+    return;
+}
