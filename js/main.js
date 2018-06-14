@@ -36,3 +36,16 @@ function loadTasksFromLocalStorage() {
     });
     console.log(tasks)
 }
+
+// ADD TASK
+function addTask(e) {
+    e.preventDefault();
+    const value = taskInput.value.trim();
+
+    if ( value.length < 1 ) { return; }
+    
+    createTaskElement(value);
+    clearInputField();
+    saveTaskToLocalStorage(value);
+
+}
