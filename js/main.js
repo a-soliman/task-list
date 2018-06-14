@@ -92,3 +92,15 @@ function removeTask(e) {
     task.remove();
     return;
 }
+
+// REMOVE TASK FROM LOCALSTORAGE
+function removeTaskFromLocalStorage(content) {
+    let tasks = JSON.parse(localStorage.getItem('tasks'));
+    if (tasks.length > 0) {
+        tasks = tasks.filter((task) => {
+            return task !== content;
+        });
+
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+}
