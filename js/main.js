@@ -82,3 +82,13 @@ function clearInputField() {
     taskInput.value = '';
     return;
 }
+
+// REMOVE TASK
+function removeTask(e) {
+    if ( !e.target.classList.contains('fa-remove')) { return; }
+
+    const task = e.target.parentElement.parentElement;
+    removeTaskFromLocalStorage(task.textContent);
+    task.remove();
+    return;
+}
